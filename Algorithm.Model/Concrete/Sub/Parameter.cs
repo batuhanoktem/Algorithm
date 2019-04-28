@@ -9,6 +9,5 @@ namespace Algorithm.Model.Concrete.Sub
     public class Parameter
     {
         public string Name { get; set; }
-
     }
 }

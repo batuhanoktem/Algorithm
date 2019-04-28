@@ -1,4 +1,5 @@
 ﻿using Algorithm.Model.Concrete.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Algorithm.Model.Concrete.Sub
 {
@@ -6,7 +7,10 @@ namespace Algorithm.Model.Concrete.Sub
     {
         public string Content { get; set; }
         public Comment ParentComment { get; set; }
-        public Blog BlogId { get; set; }
-        public User UserId { get; set; }
+        [ForeignKey("Blog")]
+        public long BlogId { get; set; }
+        [ForeignKey("User")]
+        public User User { get; set; }
+        public long UserId { get; set; }
     }
 }

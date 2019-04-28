@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Algorithm.Model.Enum
 {
-    public enum BlogUser
-    {
-    }
     public enum Content
     {
         Like,

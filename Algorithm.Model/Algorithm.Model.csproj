@@ -34,6 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.0.0-preview4-27615-11\ref\netcoreapp3.0\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,9 +55,10 @@
     <Compile Include="Concrete\Sub\FeedBack.cs" />
     <Compile Include="Concrete\Sub\Parameter.cs" />
     <Compile Include="Concrete\Sub\User.cs" />
-    <Compile Include="Enum\Parameter.cs" />
-    <Compile Include="Enum\Blog.cs" />
-    <Compile Include="Enum\BlogUser.cs" />
+    <Compile Include="Enum\Blog\Visibility.cs" />
+    <Compile Include="Enum\Parameter\Parameter.cs" />
+    <Compile Include="Enum\Blog\Status.cs" />
+    <Compile Include="Enum\BlogUser\Content.cs" />
     <Compile Include="Interface\IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
