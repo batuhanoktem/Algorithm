@@ -5,12 +5,12 @@
     }
     public enum Status
     {
-        Draft = 1,
-        Publish = 2,
+        Draft,
+        Publish
     }
     public enum Visibility
     {
-        Public = 1,
-        Private = 2,
+        Public,
+        Private
     }
 }

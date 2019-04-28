@@ -2,7 +2,7 @@
 {
     public enum Parameter
     {
-        Tag = 1,
-        Category = 2,
+        Tag,
+        Category
     }
 }

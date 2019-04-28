@@ -11,10 +11,10 @@ namespace Algorithm.Model.Enum
     }
     public enum Content
     {
-        Like = 1,
-        Todo = 2,
-        Done = 3,
-        Point = 4,
-        PersonelComment = 5
+        Like,
+        Todo,
+        Done,
+        Point,
+        PersonelComment
     }
 }
