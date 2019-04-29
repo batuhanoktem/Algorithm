@@ -1,4 +1,4 @@
-﻿namespace Algorithm.Model.Enum
+﻿namespace Algorithm.Model.Enum.Blog
 {
     public enum Status
     {

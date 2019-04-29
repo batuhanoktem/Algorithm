@@ -1,5 +1,5 @@
 ﻿using Algorithm.Model.Concrete.Base;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Algorithm.Model.Concrete.Sub
 {
@@ -7,8 +7,10 @@ namespace Algorithm.Model.Concrete.Sub
     {
         public string Comment { get; set; }
         public int Rate { get; set; }
-        [ForeignKey("Blog")]
+        public Blog Blog { get; set; }
         public long BlogId { get; set; }
-        public string Mail { get; set; } // not required
+        [StringLength(200)]
+        [DataType(DataType.EmailAddress)]
+        public string Mail { get; set; }
     }
 }

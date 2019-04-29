@@ -56,7 +56,7 @@
     <Compile Include="Concrete\Sub\Parameter.cs" />
     <Compile Include="Concrete\Sub\User.cs" />
     <Compile Include="Enum\Blog\Visibility.cs" />
-    <Compile Include="Enum\Parameter\Parameter.cs" />
+    <Compile Include="Enum\Parameter\Content.cs" />
     <Compile Include="Enum\Blog\Status.cs" />
     <Compile Include="Enum\BlogUser\Content.cs" />
     <Compile Include="Interface\IEntity.cs" />

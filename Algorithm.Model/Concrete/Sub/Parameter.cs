@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Algorithm.Model.Concrete.Base;
+using Algorithm.Model.Enum.Parameter;
+using System.ComponentModel.DataAnnotations;
 
 namespace Algorithm.Model.Concrete.Sub
 {
-    public class Parameter
+    public class Parameter : BaseModel
     {
+        [StringLength(200)]
         public string Name { get; set; }
+        public Content ContentType { get; set; }
     }
 }
