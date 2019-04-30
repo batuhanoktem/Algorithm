@@ -11,7 +11,7 @@ namespace Algorithm.Helper
     public static class StaticMethods
     {
         static readonly byte[] encryptSalt = new byte[] { 0x35, 0x59, 0x27, 0x48 };
-        private const string encryptKey = "!!BatucanMalik!!";
+        private const string encryptKey = "!BatucanMalik!";
 
         public static string ConvertToBase64(object obj, bool encrypt = false, string encryptKey = encryptKey)
         {
