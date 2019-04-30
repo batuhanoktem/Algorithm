@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\Algorithm.Helper\Algorithm.Helper.csproj" />
+    <ProjectReference Include="..\Algorithm.Model\Algorithm.Model.csproj" />
   </ItemGroup>
 
 </Project>
