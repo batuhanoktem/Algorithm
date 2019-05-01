@@ -11,6 +11,6 @@ namespace Algorithm.Model.Concrete.Sub
         public long BlogId { get; set; }
         [StringLength(200)]
         [DataType(DataType.EmailAddress)]
-        public string Mail { get; set; }
+        public string Email { get; set; }
     }
 }

@@ -6,6 +6,6 @@
         Todo,
         Done,
         Point,
-        PersonelComment
+        PersonalComment
     }
 }
