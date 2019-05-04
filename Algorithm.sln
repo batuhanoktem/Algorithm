@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithm.Api", "Algorithm.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithm", "Algorithm\Algorithm.csproj", "{5C87A2EB-DDDE-4672-8B8F-AEDE5A145C62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm.Model", "Algorithm.Model\Algorithm.Model.csproj", "{F7906CE7-5177-483D-AD16-640ADFD5814E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithm.Model", "Algorithm.Model\Algorithm.Model.csproj", "{F7906CE7-5177-483D-AD16-640ADFD5814E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm.Helper", "Algorithm.Helper\Algorithm.Helper.csproj", "{67F1C650-4668-47A8-A2B6-904BB06F4406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithm.Helper", "Algorithm.Helper\Algorithm.Helper.csproj", "{67F1C650-4668-47A8-A2B6-904BB06F4406}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
