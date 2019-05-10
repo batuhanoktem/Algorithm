@@ -10,7 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Algorithm.Api
 {
@@ -52,39 +51,15 @@ namespace Algorithm.Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             var key = Encoding.ASCII.GetBytes(Configuration["Application:Secret"]);
-            services.AddAuthentication(x =>
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(opt =>
             {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(x =>
-            {
-                x.Audience = "SomeCustomApp";
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.ClaimsIssuer = "mineplaJWT.api.demo";
-                x.TokenValidationParameters = new TokenValidationParameters
+                opt.TokenValidationParameters = new TokenValidationParameters
                 {
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
-                    ValidateAudience = true
-                };
-                x.Events = new JwtBearerEvents()
-                {
-                    OnTokenValidated = (context) =>
-                    {
-                        //context.Principal.Identity is ClaimsIdentity
-                        //So casting it to ClaimsIdentity provides all generated claims
-                        //And for an extra token validation they might be usefull
-                        var name = context.Principal.Identity.Name;
-                        if (string.IsNullOrEmpty(name))
-                        {
-                            context.Fail("Unauthorized. Please re-login");
-                        }
-                        return Task.CompletedTask;
-                    }
+                    ValidateAudience = false
                 };
             });
         }
@@ -110,13 +85,9 @@ namespace Algorithm.Api
             }
 
             app.UseElmah();
-
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

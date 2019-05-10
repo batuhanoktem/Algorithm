@@ -29,25 +29,23 @@ namespace Algorithm.Api.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Post([FromBody] User user)
+        public IActionResult Login([FromBody] User user)
         {
             //TODO: Check credentials from some user management system
-
+            var userr = new User() { Id = 2, UserName = "malik" };
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_config["Application:Secret"]);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Audience = "SomeCustomApp",
-                Issuer = "mineplaJWT.api.demo",
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(ClaimTypes.HomePhone,"+90 555 123 45 67")
+                    new Claim(ClaimTypes.NameIdentifier,userr.Id.ToString()),
+                    new Claim(ClaimTypes.Name, userr.UserName),
                 }),
-
                 Expires = DateTime.UtcNow.AddHours(1),
-
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(token);
