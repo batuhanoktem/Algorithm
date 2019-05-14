@@ -1,10 +1,11 @@
-﻿using Algorithm.Model.Concrete.Sub;
+﻿using Algorithm.Model.Concrete.Base;
+using Algorithm.Model.Concrete.Sub;
 
 namespace Algorithm.Model.Concrete.Multiple
 {
-    public class BlogLanguage
+    public class BlogLanguage: BaseModel
     {
-        public Blog BlogId { get; set; }
-        public Language LanguageId { get; set; }
+        public long BlogId { get; set; }
+        public long LanguageId { get; set; }
     }
 }

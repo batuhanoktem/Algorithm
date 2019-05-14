@@ -15,11 +15,7 @@ namespace Algorithm.Model.Concrete.Sub
         public decimal AvgPoint { get; set; }
         public Status Status  { get; set; }
         public Visibility Visibility { get; set; }
-        public Blog NextBlog { get; set; }
-        public long? NextBlogId { get; set; }
-        public Blog PreviousBlog { get; set; }
-        public long? PreviousBlogId { get; set; }
-
-
+        //public long? NextBlogId { get; set; }
+        //public long? PreviousBlogId { get; set; }
     }
 }
